@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Підключення стилів -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css'
+    integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=='
+    crossorigin='anonymous' />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="form">
+    <input type="text" class="title" placeholder="Введіть заголовок" />
+    <textarea name="" class="text" placeholder="Нотатка..."></textarea>
+    <button id="add">Add note +</button>
+  </div>
+
+  <div class="notes">
+    <div class="note">
+      <div class="head">
+        <h3>SIT</h3>
+        <h5>12:11</h5>
+      </div>
+
+      <p> Введіть інформацію котру ви хочете прикріпити або запам'ятати</p>
+      <div class="buttons">
+        <button class="but"><i class="fa-solid fa-pen"></i></button>
+        <button><i class="fa-solid fa-trash-can"></i></button>
+        <button><i class="fa-solid fa-check"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Підключення jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Підключення локального скрипта -->
+  <script src="script.js"></script>
+</body>
+
+</html>

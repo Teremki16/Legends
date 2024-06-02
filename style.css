@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+body{
+  background: linear-gradient(45deg, rgb(103, 185, 103), rgb(87, 171, 213), rgb(49, 85, 203));
+  min-height: 100vh;
+}
+
+.form{
+  border-radius: 13px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  margin: 30px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(29, 44, 140, 0.377);
+}
+
+button{
+  border-radius: 6px;
+  width: 100px;
+  align-self: flex-end;
+  color: rgb(8, 96, 134);
+  background-color: rgb(110, 199, 206);
+  border: none;
+}
+
+.note{
+  max-width: 300px;
+  
+}
+
+input, textarea{
+  border: none;
+}
+
+.buttons{
+  display: flex;
+  height: 20px;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.buttons button{
+  flex-grow: 1;
+  height: 20px;
+}
+
+.notes{
+  padding: 20px;
+  max-width: 200px;
+  margin: 20px;
+  border: 1px solid white;
+  border-radius: 13px;
+}
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+h5{
+  color: rgba(36, 86, 151, 0.543);
+}
+
+.note p {
+  margin: 8px 0;
+}
+
+#add{
+  padding: 5px 9px;
+  transition: all 0.3s;
+}
+
+:focus{
+  outline: none;
+}
+
+
+
+
+#add:hover{
+  background-color: rgb(94, 162, 218);
+  transform: scale(1.1);
+  color: white;
+}
