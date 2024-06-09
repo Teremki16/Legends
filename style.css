@@ -50,7 +50,7 @@ input, textarea{
   height: 20px;
 }
 
-.notes{
+.note{
   padding: 20px;
   max-width: 200px;
   margin: 20px;
@@ -88,4 +88,12 @@ h5{
   background-color: rgb(94, 162, 218);
   transform: scale(1.1);
   color: white;
+  /* text-decoration: line-through; */
 }
+.note.true{
+  text-decoration: line-through;
+  opacity: 0.7;
+  color: rgb(64, 93, 99);
+}
+
+  
