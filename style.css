@@ -3,12 +3,13 @@
   padding: 0;
   font-family: monospace;
 }
-body{
+
+body {
   background: linear-gradient(45deg, rgb(103, 185, 103), rgb(87, 171, 213), rgb(49, 85, 203));
   min-height: 100vh;
 }
 
-.form{
+.form {
   border-radius: 13px;
   padding: 10px;
   background-color: white;
@@ -20,7 +21,7 @@ body{
   box-shadow: 5px 5px 5px 5px rgba(29, 44, 140, 0.377);
 }
 
-button{
+#add {
   border-radius: 6px;
   width: 100px;
   align-self: flex-end;
@@ -29,42 +30,48 @@ button{
   border: none;
 }
 
-.note{
-  max-width: 300px;
-  
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+  gap: 15px;
+  padding: 10px;
 }
 
-input, textarea{
+input,
+textarea {
   border: none;
 }
 
-.buttons{
+.buttons {
   display: flex;
   height: 20px;
   align-items: stretch;
   gap: 10px;
 }
 
-.buttons button{
+.buttons button {
   flex-grow: 1;
   height: 20px;
+  border-radius: 6px;
+  width: 100px;
+  color: rgb(8, 96, 134);
+  background-color: rgb(110, 199, 206);
+  border: none;
 }
 
-.note{
+.note {
   padding: 20px;
-  max-width: 200px;
-  margin: 20px;
   border: 1px solid white;
   border-radius: 13px;
 }
 
-.head{
+.head {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-h5{
+h5 {
   color: rgba(36, 86, 151, 0.543);
 }
 
@@ -72,28 +79,88 @@ h5{
   margin: 8px 0;
 }
 
-#add{
+#add {
   padding: 5px 9px;
   transition: all 0.3s;
 }
 
-:focus{
+:focus {
   outline: none;
 }
 
 
 
 
-#add:hover{
+#add:hover {
   background-color: rgb(94, 162, 218);
   transform: scale(1.1);
   color: white;
   /* text-decoration: line-through; */
 }
-.note.true{
+
+.note.true {
   text-decoration: line-through;
   opacity: 0.7;
   color: rgb(64, 93, 99);
 }
 
+
+.overlay .window {
+   display: none;
+  transition: all 0.5s;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(5px);
+ 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.overlay button{
+  border-radius: 6px;
+  width: 100px;
+  color: rgb(8, 96, 134);
+  background-color: rgb(110, 199, 206);
+  border: none;
+}
+.window .div{
+  display: flex;
+  gap: 10px;
+  height: 150px;
+  width: 300px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(67, 116, 191);
+  border-radius: 15px;
   
+}
+
+.div input,.div textarea{
+  border-radius: 10px; 
+ 
+}
+
+.div input{
+  width: 280px;
+
+}
+
+.div textarea{
+  height: 100px;
+  width: 280px;
+}
+.div textarea::placeholder, .div input::placeholder{
+  text-align: center;
+}
+
+.div {
+  padding: 5px;
+}
+
+.buttons button:hover, .butt1:hover{
+  background-color: rgb(125, 248, 242);
+  transition: 0.4s;
+  
+}

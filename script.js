@@ -1,8 +1,11 @@
 
 let notes = JSON.parse(localStorage.getItem("notes")) || []
 draw()
+let last;
 
 $("#add").click(function () {
+if(  $(".title").val() != "" ){
+
   let note = {
     title: $(".title").val(),
     text: $(".text").val(),
@@ -15,6 +18,9 @@ $("#add").click(function () {
   localStorage.setItem("notes", JSON.stringify(notes))
   draw()
   
+}else{
+  alert("Заповніть всі поля");
+}
 })
 
 function draw() {
@@ -62,17 +68,36 @@ function noteDo(complete) {
 }
 function redact(data) {
   let objectToModify = notes.find(obj => obj.data == data);
-  
 
-  // Змінюємо поле обраного об'єкта
   if (objectToModify) {
-    objectToModify.title = prompt("Введіть новий заголовок",objectToModify.title)
-    objectToModify.text = prompt("Введіть новий текст",objectToModify.text)
+    $(".window").css("display", "flex")
+    $("#headerredact").val(objectToModify.title);
+    $("#arearedact").val(objectToModify.text);
+    last = data
+      localStorage.setItem("notes", JSON.stringify(notes))
+      draw()
   }
-  localStorage.setItem("notes", JSON.stringify(notes))
-  draw()
-
 }
+
+$(".butt1").click(function saveEditedNote() {
+  let editedTitle = $("#headerredact").val();
+  let editedText = $("#arearedact").val();
+
+  let objectToModify = notes.find(obj => obj.data == last);
+
+  if (objectToModify) {
+   
+    objectToModify.title = editedTitle;
+    objectToModify.text = editedText;
+
+    
+    localStorage.setItem("notes", JSON.stringify(notes));
+
+    draw();
+    $(".window").css("display", "none")
+  }
+})
+
 
 // prompt("asdasd","" ,(mess)=>{
 //   alert(mess)
@@ -80,5 +105,11 @@ function redact(data) {
 
 
 
-// localStorage.setItem("notes", JSON.stringify(data))
+// localStorage.setItem("notes", JSON.stringify(
+
+
+
+
+
+
 
