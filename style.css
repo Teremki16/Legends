@@ -63,6 +63,8 @@ textarea {
   padding: 20px;
   border: 1px solid white;
   border-radius: 13px;
+  transition: all 1s;
+  position: relative;
 }
 
 .head {
@@ -106,7 +108,7 @@ h5 {
 
 
 .overlay .window {
-   display: none;
+  display: none;
   transition: all 0.5s;
   position: fixed;
   inset: 0;
@@ -115,13 +117,14 @@ h5 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
  
 }
 .overlay button{
   border-radius: 6px;
   width: 100px;
-  color: rgb(8, 96, 134);
-  background-color: rgb(110, 199, 206);
+  color: rgb(142, 231, 255);
+  background-color: rgb(34, 111, 234);
   border: none;
 }
 .window .div{
@@ -160,7 +163,33 @@ h5 {
 }
 
 .buttons button:hover, .butt1:hover{
-  background-color: rgb(125, 248, 242);
+  background-color: rgb(56, 212, 255);
+  color: rgb(8, 96, 134);
   transition: 0.4s;
   
+}
+.open {
+  animation: fadeIn;
+  animation-duration: 0.5s;
+}
+.closing {
+  animation: fadeOut;
+  animation-duration: 0.5s;
+}
+
+#headerredact, #arearedact{
+  padding: 7px;
+}
+h6{
+  display: none;
+  position: absolute;
+  top: 39px;
+  left: 148px;
+  
+  /* left: 168px; */
+  color: rgba(20, 90, 118, 0.539);
+}
+
+h6.true {
+  display: block;
 }

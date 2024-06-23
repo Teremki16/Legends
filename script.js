@@ -10,7 +10,8 @@ if(  $(".title").val() != "" ){
     title: $(".title").val(),
     text: $(".text").val(),
     data: new Date().getTime(),
-    complete: false
+    complete: false,
+    change: false,
   }
   notes.push(note)
   $(".title").val("")
@@ -19,7 +20,7 @@ if(  $(".title").val() != "" ){
   draw()
   
 }else{
-  alert("Заповніть всі поля");
+  alert("Введіть заголовок");
 }
 })
 
@@ -29,6 +30,7 @@ function draw() {
     $(".notes").append(
       `<div class="note ${element.complete}">
       <div class="head">
+        <h6 class="${element.change}">(Змінено)</h6>
         <h3>${element.title}</h3>
         <h5>${new Date(element.data).toDateString()}</h5>
       </div>
@@ -71,6 +73,8 @@ function redact(data) {
 
   if (objectToModify) {
     $(".window").css("display", "flex")
+    $(".window").addClass("open")
+    $(".window").removeClass("closing")
     $("#headerredact").val(objectToModify.title);
     $("#arearedact").val(objectToModify.text);
     last = data
@@ -89,12 +93,21 @@ $(".butt1").click(function saveEditedNote() {
    
     objectToModify.title = editedTitle;
     objectToModify.text = editedText;
+    objectToModify.change = true
 
     
     localStorage.setItem("notes", JSON.stringify(notes));
 
     draw();
-    $(".window").css("display", "none")
+
+    // $(".window").css("animation", "fadeOut")
+    // $(".window").css("animation-duration", "1s")
+    setTimeout(()=>{
+      $(".window").css("display", "none")
+    }, 500)
+    $(".window").removeClass("open")
+    $(".window").addClass("closing")
+    
   }
 })
 
